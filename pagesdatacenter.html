@@ -3,87 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مركز البيانات - تحميل المواد</title>
+    <title>مركز تحميل المواد</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* تنسيق بسيط خاص بهذه الصفحة */
+        /* تنسيقات خاصة بصفحة التحميل */
+        body { background-color: #000; color: #fff; }
+        
         .subject-section {
             background-color: #1a1a1a;
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
+            padding: 25px;
+            margin-bottom: 40px;
             border: 1px solid #333;
             text-align: right;
+            max-width: 800px;
+            margin: 30px auto;
         }
+
         .subject-title {
             color: #f39c12;
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 22px;
         }
-        .download-row {
+
+        .file-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #252525;
-            padding: 10px 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: 0.3s;
         }
-        .download-btn-small {
+
+        .file-row:hover {
+            border-color: #f39c12;
+        }
+
+        .file-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .file-info p {
+            margin: 0;
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        .btn-download {
+            background: #333;
+            color: #f39c12;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px solid #f39c12;
+        }
+
+        .btn-download:hover {
             background: #f39c12;
             color: #000;
-            padding: 5px 15px;
-            border-radius: 5px;
+        }
+
+        /* زر الاختبار الذاتي المميز */
+        .test-link-row {
+            background: rgba(243, 156, 18, 0.1); /* خلفية برتقالية خفيفة جداً */
+            border: 1px dashed #f39c12;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .btn-goto-test {
+            display: inline-block;
+            background: #f39c12;
+            color: #000;
+            padding: 10px 30px;
+            border-radius: 50px;
             text-decoration: none;
-            font-size: 12px;
             font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <header style="padding: 15px; background: #000; border-bottom: 2px solid #f39c12;">
-        <h2 style="color: #fff; margin: 0; font-size: 18px;">📁 مركز تحميل المواد</h2>
-        <a href="index.html" style="color: #f39c12; text-decoration: none; font-size: 14px; display: block; margin-top: 5px;">⬅️ العودة للصفحة الرئيسية</a>
+    <header style="padding: 20px; border-bottom: 2px solid #f39c12; text-align: center;">
+        <h2 style="margin: 0; color: #f39c12;">📁 المواد الدراسية</h2>
+        <a href="index.html" style="color: #fff; text-decoration: none; font-size: 14px; display: block; margin-top: 10px;">⬅️ العودة للصفحة الرئيسية</a>
     </header>
 
-    <main style="padding: 20px; max-width: 800px; margin: 0 auto;">
-
-        <div id="problems" class="subject-section">
-            <h3 class="subject-title">🧩 المشكلات المحاسبية المعاصرة</h3>
-            
-            <div class="download-row">
-                <div>
-                    <span style="color: #fff; display: block;">شرح الوحدة الأولى (التضخم)</span>
-                    <small style="color: #aaa;">ملف PDF</small>
-                </div>
-                <a href="#" class="download-btn-small">تحميل 📥</a>
+    <div id="cost" class="subject-section">
+        <h3 class="subject-title">🏭 Cost Accounting (محاسبة التكاليف)</h3>
+        
+        <div class="file-row">
+            <div class="file-info">
+                <h4>JOB ORDER COSTING</h4>
+                <p>📄 Chapter 4.pdf (1.7 MB)</p>
             </div>
-
-            <div class="download-row">
-                <div>
-                    <span style="color: #fff; display: block;">أسئلة سنوات سابقة</span>
-                    <small style="color: #aaa;">ملف PDF</small>
-                </div>
-                <a href="#" class="download-btn-small">تحميل 📥</a>
-            </div>
+            <a href="#" class="btn-download">تحميل 📥</a>
         </div>
 
-        <div id="cost" class="subject-section">
-            <h3 class="subject-title">🏭 محاسبة التكاليف</h3>
-            
-            <div class="download-row">
-                <div>
-                    <span style="color: #fff; display: block;">ملخص المادة كاملة</span>
-                    <small style="color: #aaa;">ملف Word</small>
-                </div>
-                <a href="#" class="download-btn-small">تحميل 📥</a>
+        <div class="file-row">
+            <div class="file-info">
+                <h4>Allocation of Support-Department Costs</h4>
+                <p>📄 Chapter 15.pdf (3.3 MB)</p>
             </div>
+            <a href="#" class="btn-download">تحميل 📥</a>
         </div>
 
-        </main>
+        <div class="file-row">
+            <div class="file-info">
+                <h4>Cost Allocation: Joint Products</h4>
+                <p>📄 Chapter 16.pdf (2.5 MB)</p>
+            </div>
+            <a href="#" class="btn-download">تحميل 📥</a>
+        </div>
+
+        <div class="test-link-row">
+            <h4 style="margin: 0; color: #fff;">هل درست المادة جيداً؟</h4>
+            <p style="font-size: 13px; color: #ccc;">اختبر معلوماتك الآن في قسم الاختبارات الذاتية</p>
+            <a href="index.html#self-test" class="btn-goto-test">الذهاب للاختبار الذاتي 📝</a>
+        </div>
+    </div>
+
+
+    <div id="problems" class="subject-section">
+        <h3 class="subject-title">🧩 المشكلات المحاسبية المعاصرة</h3>
+        <p style="color: #aaa; text-align: center;">سيتم إضافة المواد قريباً...</p>
+        
+        <div class="test-link-row">
+            <a href="index.html#self-test" class="btn-goto-test">الذهاب للاختبار الذاتي 📝</a>
+        </div>
+    </div>
 
 </body>
 </html>
