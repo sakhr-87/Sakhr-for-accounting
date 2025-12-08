@@ -171,9 +171,9 @@ footer {
 }
 
 .footer-section h3 {
-    color: #f39c12;
+    color: #fff;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-bottom: 1px solid #333;
     display: inline-block;
     padding-bottom: 5px;
@@ -182,30 +182,31 @@ footer {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px; /* زيادة المسافة بين الأيقونات */
 }
 
 .social-icons a {
-    color: #ccc;
-    font-size: 24px;
+    color: #f39c12; /* اللون البرتقالي الغامق للأيقونات */
+    font-size: 35px; /* تكبير حجم الأيقونات */
     transition: 0.3s;
+    text-decoration: none; /* إزالة الخط الافتراضي */
 }
 
 .social-icons a:hover {
-    color: #f39c12;
-    transform: scale(1.1);
+    color: #fff; /* تحول للأبيض عند اللمس */
+    transform: scale(1.2);
 }
 
 .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .footer-links a {
     color: #ccc;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 14px;
     transition: 0.3s;
 }
 
