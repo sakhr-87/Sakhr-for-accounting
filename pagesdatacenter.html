@@ -56,6 +56,7 @@
         }
 
         .subject-section {
+            display: none;
             background-color: #1a1a1a;
             border-radius: 15px;
             padding: 20px;
@@ -65,6 +66,12 @@
             max-width: 800px;
             margin: 20px auto;
             width: 95%;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .subject-title {
@@ -141,6 +148,13 @@
             margin-top: 8px;
             box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2);
         }
+
+        #no-selection-msg {
+            display: none;
+            text-align: center;
+            padding: 50px;
+            color: #777;
+        }
     </style>
 </head>
 <body>
@@ -151,6 +165,10 @@
         </a>
         <h2>📁 المواد الدراسية</h2>
     </header>
+
+    <div id="no-selection-msg">
+        <p>الرجاء اختيار مادة من الصفحة الرئيسية</p>
+    </div>
 
     <div id="cost" class="subject-section">
         <h3 class="subject-title">🏭 Cost Accounting</h3>
@@ -189,6 +207,30 @@
         <h3 class="subject-title">🧩 المشكلات المعاصرة</h3>
         <p style="color: #aaa; text-align: center; font-size: 13px;">لا يوجد مواد حالياً</p>
     </div>
+
+    <script>
+        function showSection() {
+            var sections = document.querySelectorAll('.subject-section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            var hash = window.location.hash.substring(1);
+
+            if (hash) {
+                var targetSection = document.getElementById(hash);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    document.getElementById('no-selection-msg').style.display = 'none';
+                }
+            } else {
+                document.getElementById('no-selection-msg').style.display = 'block';
+            }
+        }
+
+        window.onload = showSection;
+        window.onhashchange = showSection;
+    </script>
 
 </body>
 </html>
