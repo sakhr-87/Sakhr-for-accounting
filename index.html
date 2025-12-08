@@ -3,210 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مركز تحميل المواد</title>
+    <title>Sakhr For Accounting</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* إعدادات الصفحة */
-        body { background-color: #000; color: #fff; margin: 0; padding-bottom: 50px; }
-
-        /* --- 1. تصميم الهيدر وزر الرجوع الجديد --- */
-        header {
-            padding: 20px;
-            border-bottom: 2px solid #f39c12;
-            text-align: center;
-            position: relative; /* ضروري عشان زر الرجوع يجي بالزاوية */
-            background-color: #0d0d0d;
-            height: 70px; /* ارتفاع ثابت للهيدر */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        header h2 {
-            margin: 0;
-            color: #f39c12;
-            font-size: 18px; /* تصغير خط العنوان */
-        }
-
-        /* زر الرجوع (App Style) */
-        .back-btn {
-            position: absolute;
-            left: 20px; /* مكانه في اليسار */
-            top: 50%;
-            transform: translateY(-50%); /* لضمان توسطه عمودياً */
-            
-            width: 40px;
-            height: 40px;
-            background-color: #1a1a1a;
-            color: #f39c12;
-            border: 1px solid #333;
-            border-radius: 50%; /* شكل دائري */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            transition: all 0.2s ease; /* تنعيم الحركة */
-        }
-
-        /* أنيميشن عند الضغط (تكبير وتصغير) */
-        .back-btn:active {
-            transform: translateY(-50%) scale(0.9); /* تصغير عند الضغط */
-            background-color: #f39c12;
-            color: #000;
-            border-color: #f39c12;
-        }
-
-        /* --- 2. تصميم الأقسام والملفات --- */
-        .subject-section {
-            background-color: #1a1a1a;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            border: 1px solid #333;
-            text-align: right;
-            max-width: 800px;
-            margin: 20px auto;
-            width: 95%; /* عشان ما يلزق بالحواف في الموبايل */
-        }
-
-        .subject-title {
-            color: #f39c12;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            font-size: 18px; /* تصغير الخط */
-        }
-
-        .file-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #252525;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            border: 1px solid #333;
-        }
-
-        .file-info h4 {
-            margin: 0 0 3px 0;
-            font-size: 14px; /* تصغير اسم الملف */
-            color: #fff;
-        }
-
-        .file-info p {
-            margin: 0;
-            font-size: 11px; /* تصغير التفاصيل */
-            color: #aaa;
-        }
-
-        /* --- 3. تصميم زر التحميل (ثابت وموحد) --- */
-        .btn-download {
-            background: #333;
-            color: #f39c12;
-            padding: 6px 15px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: bold;
-            border: 1px solid #f39c12;
-            
-            /* الحل السحري لتثبيت الأيقونة بجانب النص */
-            display: flex; 
-            align-items: center;
-            justify-content: center;
-            gap: 5px; /* مسافة ثابتة بين الأيقونة والكلمة */
-            min-width: 80px; /* عرض أدنى عشان ما يفعص */
-            transition: 0.2s;
-        }
-
-        .btn-download:hover {
-            background: #f39c12;
-            color: #000;
-        }
-
-        /* زر الاختبار الذاتي */
-        .test-link-row {
-            background: rgba(243, 156, 18, 0.05);
-            border: 1px dashed #f39c12;
-            text-align: center;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .btn-goto-test {
-            display: inline-block;
-            background: #f39c12;
-            color: #000;
-            padding: 8px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            margin-top: 8px;
-            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2);
-        }
-    </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="back-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </a>
-        
-        <h2>📁 المواد الدراسية</h2>
+        <div class="logo-container">
+            <img src="logo.png" alt="شعار صخر" class="logo-img" style="width: 80px !important; height: auto !important; border-radius: 10px;">
+            <p class="slogan">Accounting With You Anywhere & Anytime</p>
+        </div>
     </header>
 
-    <div id="cost" class="subject-section">
-        <h3 class="subject-title">🏭 Cost Accounting</h3>
-        
-        <div class="file-row">
-            <div class="file-info">
-                <h4>JOB ORDER COSTING</h4>
-                <p>Chapter 4.pdf</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>محاسبة معك في أي وقت ومكان</h2>
+            <p>منصتك الشاملة لتعلم المحاسبة، تحليل البيانات، والأنظمة المالية.</p>
+            <a href="#data-center" class="cta-btn">تصفح المواد</a>
+        </div>
+    </section>
+
+    <main id="data-center">
+        <h2 class="section-title">📁 Data Center (مركز البيانات)</h2>
+        <div class="grid-container">
+            
+            <div class="card">
+                <div class="icon">🏭</div>
+                <h3>Cost Accounting</h3>
+                <p>محاسبة التكاليف</p>
+                <a href="pagesdatacenter.html#cost" class="card-btn">عرض المحتوى</a>
             </div>
-            <a href="#" class="btn-download">
-                تحميل 📥
-            </a>
-        </div>
 
-        <div class="file-row">
-            <div class="file-info">
-                <h4>Support-Department Costs</h4>
-                <p>Chapter 15.pdf</p>
+            <div class="card">
+                <div class="icon">🧩</div> 
+                <h3>Contemporary Problems</h3>
+                <p>المشكلات المحاسبية المعاصرة</p>
+                <a href="pagesdatacenter.html#problems" class="card-btn">عرض المحتوى</a>
             </div>
-            <a href="#" class="btn-download">
-                تحميل 📥
-            </a>
-        </div>
 
-        <div class="file-row">
-            <div class="file-info">
-                <h4>Joint Products</h4>
-                <p>Chapter 16.pdf</p>
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>AIS</h3>
+                <p>نظم المعلومات المحاسبية</p>
+                <a href="pagesdatacenter.html" class="card-btn">عرض المحتوى</a>
             </div>
-            <a href="#" class="btn-download">
-                تحميل 📥
-            </a>
+
+            <div class="card">
+                <div class="icon">🏦</div>
+                <h3>Financial Institutions</h3>
+                <p>محاسبة المؤسسات المالية</p>
+                <a href="pagesdatacenter.html" class="card-btn">عرض المحتوى</a>
+            </div>
+
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3>Statistical Analysis</h3>
+                <p>التحليل الإحصائي</p>
+                <a href="pagesdatacenter.html" class="card-btn">عرض المحتوى</a>
+            </div>
+
+            <div class="card">
+                <div class="icon">📋</div>
+                <h3>Managerial Accounting</h3>
+                <p>المحاسبة الإدارية</p>
+                <a href="pagesdatacenter.html" class="card-btn">عرض المحتوى</a>
+            </div>
+
+            <div class="card">
+                <div class="icon">🖥️</div>
+                <h3>ICDL Course</h3>
+                <p>دورة قيادة الحاسب الآلي</p>
+                <a href="pagesdatacenter.html" class="card-btn">عرض المحتوى</a>
+            </div>
+
+             <div class="card">
+                <div class="icon">🏛️</div>
+                <h3>Gov. Info Systems</h3>
+                <p>نظم المعلومات الحكومية</p>
+                <a href="pagesdatacenter.html" class="card-btn">عرض المحتوى</a>
+            </div>
+
         </div>
+    </main>
 
-        <div class="test-link-row">
-            <h4 style="margin: 0; color: #fff; font-size: 14px;">جاهز للاختبار؟</h4>
-            <a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a>
+    <section id="self-test" class="dark-section">
+        <h2 class="section-title">📝 Self-Test (اختبارات ذاتية)</h2>
+        <div class="grid-container">
+            
+            <div class="card test-card">
+                <div class="icon">⚖️</div>
+                <h3>Accounting Principles 2</h3>
+                <p>مبادئ المحاسبة 2</p>
+                <a href="#" class="card-btn outline">بدء الاختبار</a>
+            </div>
+
+            <div class="card test-card">
+                <div class="icon">💰</div>
+                <h3>Cost Accounting</h3>
+                <p>محاسبة التكاليف</p>
+                <a href="#" class="card-btn outline">بدء الاختبار</a>
+            </div>
+
+            <div class="card test-card">
+                <div class="icon">📚</div>
+                <h3>Accounting Principles</h3>
+                <p>مبادئ المحاسبة 1</p>
+                <a href="#" class="card-btn outline">بدء الاختبار</a>
+            </div>
+
+            <div class="card test-card">
+                <div class="icon">📋</div>
+                <h3>Managerial Accounting</h3>
+                <p>المحاسبة الإدارية</p>
+                <a href="#" class="card-btn outline">بدء الاختبار</a>
+            </div>
+
+            <div class="card test-card">
+                <div class="icon">🏦</div>
+                <h3>Financial Institutions</h3>
+                <p>محاسبة مؤسسات مالية</p>
+                <a href="#" class="card-btn outline">بدء الاختبار</a>
+            </div>
+
         </div>
-    </div>
+    </section>
 
-
-    <div id="problems" class="subject-section">
-        <h3 class="subject-title">🧩 المشكلات المعاصرة</h3>
-        <p style="color: #aaa; text-align: center; font-size: 13px;">لا يوجد مواد حالياً</p>
-    </div>
+    <footer>
+        <p>جميع الحقوق محفوظة © Sakhr For Accounting</p>
+        <div class="social-links"><a href="#">اتصل بنا</a></div>
+    </footer>
 
 </body>
 </html>
