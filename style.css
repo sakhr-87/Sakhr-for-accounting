@@ -1,4 +1,4 @@
-/* إعدادات عامة */
+/* إعدادات عامة لتصفير المسافات */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,20 +7,19 @@
 
 body {
     font-family: 'Cairo', sans-serif;
-    background-color: #121212; /* أسود داكن جداً */
+    background-color: #050505; /* أسود ملكي */
     color: #ffffff;
     text-align: center;
     line-height: 1.6;
 }
 
-/* الهيدر - تصميم جديد أنظف */
+/* --- تصميم الهيدر (الشعار) --- */
 header {
-    background-color: #000000; /* خلفية سوداء بالكامل */
-    padding: 20px 20px; /* تقليل الحشوة */
-    border-bottom: 2px solid #f39c12; /* خط برتقالي رفيع وأنيق */
+    background-color: #000000;
+    padding: 20px 10px;
+    border-bottom: 2px solid #f39c12; /* الخط البرتقالي */
 }
 
-/* تنسيق حاوية الشعار */
 .logo-container {
     display: flex;
     flex-direction: column;
@@ -28,86 +27,145 @@ header {
     justify-content: center;
 }
 
-/* تنسيق صورة الشعار - تصغير ودمج */
+/* 🛑 هنا التعديل المهم لتصغير الصورة 🛑 */
 .logo-img {
-    width: 140px; /* حجم متوسط ومناسب جداً للهاتف */
-    height: auto;
-    margin-bottom: 5px;
-    background-color: transparent; 
-    border-radius: 0; 
+    width: 130px; /* عرض ثابت وصغير */
+    height: auto; /* الارتفاع يتعدل تلقائياً */
+    max-width: 100%; 
+    border-radius: 15px; /* حواف دائرية ناعمة للصورة */
+    margin-bottom: 8px;
+    /* ظل خفيف لإبراز الشعار */
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2); 
 }
 
-/* تنسيق النص الصغير (السلوجن) */
 .slogan {
     font-size: 13px;
-    color: #f39c12; /* لون برتقالي ليتناسق مع الشعار */
-    font-weight: bold;
+    color: #f39c12; /* برتقالي */
+    font-weight: 700;
     letter-spacing: 0.5px;
-    opacity: 0.9;
-    margin-top: 5px;
 }
 
-/* قسم الترحيب */
+/* --- قسم الترحيب --- */
 .hero {
     padding: 50px 20px;
+    /* صورة خلفية مكتبية داكنة */
     background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
     background-size: cover;
     background-position: center;
-    margin-bottom: 20px;
     border-bottom: 1px solid #333;
 }
 
 .hero h2 {
-    font-size: 24px;
+    font-size: 26px;
     margin-bottom: 15px;
     color: #fff;
-    font-weight: 700;
-}
-
-.hero p {
-    font-size: 14px;
-    color: #ccc;
-    margin-bottom: 20px;
 }
 
 .cta-btn {
     display: inline-block;
     background-color: #f39c12;
     color: #000;
-    padding: 10px 30px;
+    padding: 12px 35px;
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    transition: transform 0.2s;
+    font-size: 14px;
+    margin-top: 15px;
 }
 
-.cta-btn:active {
-    transform: scale(0.95);
-}
-
-/* العناوين */
+/* --- العناوين والفواصل --- */
 .section-title {
-    margin: 30px 0 20px;
+    margin: 40px 0 25px;
     color: #f39c12;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 700;
     border-bottom: 1px solid #333;
     display: inline-block;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
 }
 
-/* الشبكة (Grid) للكروت */
+/* --- شبكة البطاقات (Data Center & Self Test) --- */
 .grid-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    padding: 15px;
-    max-width: 900px;
+    padding: 10px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-/* تصميم الكرت */
+/* تصميم البطاقة الواحدة */
 .card {
-    background-color: #1e1e1e;
+    background-color: #1a1a1a;
     border: 1px solid #333;
-    border-radius: 12
+    border-radius: 12px; /* حواف ناعمة */
+    padding: 20px 15px;
+    width: 46%; /* ليظهر كرتين بجانب بعض في الموبايل */
+    min-width: 150px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    border-color: #f39c12;
+}
+
+.icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #eee;
+    min-height: 45px; /* لتوحيد الارتفاع */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card p {
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 15px;
+    display: none; /* إخفاء الوصف للترتيب في الموبايل */
+}
+
+.card-btn {
+    width: 100%;
+    background-color: #333;
+    color: #f39c12;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: auto; /* دفع الزر للأسفل */
+}
+
+/* قسم الاختبارات */
+.dark-section {
+    background-color: #0d0d0d;
+    padding-bottom: 50px;
+    margin-top: 30px;
+    border-top: 1px solid #222;
+}
+
+.card-btn.outline {
+    background: transparent;
+    border: 1px solid #f39c12;
+}
+
+/* الفوتر */
+footer {
+    padding: 30px;
+    background-color: #000;
+    font-size: 12px;
+    color: #666;
+    border-top: 2px solid #f39c12;
+}
