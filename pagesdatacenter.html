@@ -1,146 +1,198 @@
-    <div id="ais" class="subject-section">
-        <h3 class="subject-title">💻 Accounting Information Systems (AIS)</h3>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز تحميل المواد</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { background-color: #000; color: #fff; margin: 0; padding-bottom: 50px; }
+
+        header {
+            padding: 20px;
+            border-bottom: 2px solid #f39c12;
+            text-align: center;
+            position: relative;
+            background-color: #0d0d0d;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h2 {
+            margin: 0;
+            color: #f39c12;
+            font-size: 18px;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #1a1a1a;
+            color: #f39c12;
+            border: 1px solid #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:active {
+            transform: translateY(-50%) scale(0.9);
+            background-color: #f39c12;
+            color: #000;
+            border-color: #f39c12;
+        }
+
+        .subject-section {
+            display: none; /* مخفي افتراضياً */
+            background-color: #1a1a1a;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+            text-align: right;
+            max-width: 800px;
+            margin: 20px auto;
+            width: 95%;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .subject-title {
+            color: #f39c12;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .file-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #252525;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .file-info h4 {
+            margin: 0 0 3px 0;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .file-info p {
+            margin: 0;
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        .btn-download {
+            background: #333;
+            color: #f39c12;
+            padding: 6px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid #f39c12;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            min-width: 80px;
+            transition: 0.2s;
+        }
+
+        .btn-download:hover {
+            background: #f39c12;
+            color: #000;
+        }
+
+        .test-link-row {
+            background: rgba(243, 156, 18, 0.05);
+            border: 1px dashed #f39c12;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-goto-test {
+            display: inline-block;
+            background: #f39c12;
+            color: #000;
+            padding: 8px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            margin-top: 8px;
+            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2);
+        }
+
+        #no-selection-msg {
+            display: none;
+            text-align: center;
+            padding: 50px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+        <h2>📁 المواد الدراسية</h2>
+    </header>
+
+    <div id="no-selection-msg">
+        <p>الرجاء اختيار مادة من الصفحة الرئيسية</p>
+    </div>
+
+    <div id="cost" class="subject-section">
+        <h3 class="subject-title">🏭 Cost Accounting</h3>
+        
+        <div class="file-row">
+            <div class="file-info">
+                <h4>JOB ORDER COSTING</h4>
+                <p>Chapter 4.pdf</p>
+            </div>
+            <a href="https://sakhr87.jimdofree.com/app/download/12989953431/Chapter+4.pdf?t=1556984786" target="_blank" class="btn-download">تحميل 📥</a>
+        </div>
 
         <div class="file-row">
             <div class="file-info">
-                <h4>Malware</h4>
-                <p>malware.pdf (PDF)</p>
+                <h4>Support-Department Costs</h4>
+                <p>Chapter 15.pdf</p>
             </div>
             <a href="#" class="btn-download">تحميل 📥</a>
         </div>
 
         <div class="file-row">
             <div class="file-info">
-                <h4>Control for Information System</h4>
-                <p>control for information system.pdf (PDF)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الثاني</h4>
-                <p>الفصل الثاني.doc (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الأول</h4>
-                <p>الفصل الاول.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل السادس</h4>
-                <p>الفصل السادس.doc (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الثاني عشر</h4>
-                <p>CHAPTER 12 مترجم.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>نظم المعلومات المحاسبية - الفصل الخامس</h4>
-                <p>chapter 5.pptx (PowerPoint)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الحادي والعشرون</h4>
-                <p>الفصل الحادي والعشرون.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>اسئلة الفصول في نظم المعلومات</h4>
-                <p>اسئلة النظم.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الرابع عشر</h4>
-                <p>الفصل الرابع عشر.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الحادي عشر</h4>
-                <p>CHAPTER 11 مترجم.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الثالث عشر</h4>
-                <p>الفصل الثالث عشر.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>نظم المعلومات المحاسبية - الفصل الثالث عشر</h4>
-                <p>chapter 13.pptx (PowerPoint)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الثاني والعشرون</h4>
-                <p>الفصل الثاني وعشرون.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الخامس عشر</h4>
-                <p>الفصل الخامس عشر.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>نظم المعلومات المحاسبية - الفصل السادس</h4>
-                <p>chapter 6.pptx (PowerPoint)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل الخامس</h4>
-                <p>الفصل الخامس.docx (Word)</p>
-            </div>
-            <a href="#" class="btn-download">تحميل 📥</a>
-        </div>
-
-        <div class="file-row">
-            <div class="file-info">
-                <h4>ترجمة الفصل السابع</h4>
-                <p>CHAPTER 007.doc (Word)</p>
+                <h4>Joint Products</h4>
+                <p>Chapter 16.pdf</p>
             </div>
             <a href="#" class="btn-download">تحميل 📥</a>
         </div>
@@ -150,3 +202,63 @@
             <a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a>
         </div>
     </div>
+
+    <div id="ais" class="subject-section">
+        <h3 class="subject-title">💻 Accounting Information Systems (AIS)</h3>
+
+        <div class="file-row"><div class="file-info"><h4>Malware</h4><p>malware.pdf</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>Control for Information System</h4><p>control for information system.pdf</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل الثاني</h4><p>الفصل الثاني.doc</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل الأول</h4><p>الفصل الاول.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل السادس</h4><p>الفصل السادس.doc</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل الثاني عشر</h4><p>CHAPTER 12 مترجم.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>نظم المعلومات - الفصل 5</h4><p>chapter 5.pptx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل 21</h4><p>الفصل الحادي والعشرون.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>اسئلة الفصول</h4><p>اسئلة النظم.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل 14</h4><p>الفصل الرابع عشر.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل 11</h4><p>CHAPTER 11 مترجم.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل 13</h4><p>الفصل الثالث عشر.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>نظم المعلومات - الفصل 13</h4><p>chapter 13.pptx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل 22</h4><p>الفصل الثاني وعشرون.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل 15</h4><p>الفصل الخامس عشر.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>نظم المعلومات - الفصل 6</h4><p>chapter 6.pptx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل 5</h4><p>الفصل الخامس.docx</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ترجمة الفصل 7</h4><p>CHAPTER 007.doc</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+
+        <div class="test-link-row">
+            <h4 style="margin: 0; color: #fff; font-size: 14px;">جاهز للاختبار؟</h4>
+            <a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a>
+        </div>
+    </div>
+
+    <div id="problems" class="subject-section">
+        <h3 class="subject-title">🧩 المشكلات المعاصرة</h3>
+        <p style="color: #aaa; text-align: center; font-size: 13px;">لا يوجد مواد حالياً</p>
+    </div>
+
+    <script>
+        function showSection() {
+            var sections = document.querySelectorAll('.subject-section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            var hash = window.location.hash.substring(1);
+
+            if (hash) {
+                var targetSection = document.getElementById(hash);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    document.getElementById('no-selection-msg').style.display = 'none';
+                }
+            } else {
+                document.getElementById('no-selection-msg').style.display = 'block';
+            }
+        }
+
+        window.onload = showSection;
+        window.onhashchange = showSection;
+    </script>
+
+</body>
+</html>
