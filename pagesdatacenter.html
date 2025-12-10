@@ -6,6 +6,7 @@
     <title>مركز تحميل المواد</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         body { background-color: #000; color: #fff; margin: 0; padding-bottom: 50px; }
@@ -32,7 +33,40 @@
         }
         .back-btn:active { transform: translateY(-50%) scale(0.9); background-color: #f39c12; color: #000; }
 
-        /* التصميم العادي للأقسام */
+        .search-container {
+            width: 90%;
+            max-width: 600px;
+            margin: 25px auto 10px;
+            position: relative;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 15px 45px 15px 20px;
+            border-radius: 30px;
+            border: 2px solid #f39c12;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        #search-input:focus {
+            box-shadow: 0 0 15px rgba(243, 156, 18, 0.4);
+            background-color: #222;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #f39c12;
+            font-size: 18px;
+        }
+
         .subject-section {
             display: none; background-color: #1a1a1a; border-radius: 15px; padding: 20px;
             margin-bottom: 30px; border: 1px solid #333; text-align: right; max-width: 800px; margin: 20px auto; width: 95%;
@@ -56,34 +90,23 @@
         .btn-goto-test { display: inline-block; background: #f39c12; color: #000; padding: 8px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 13px; margin-top: 8px; box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2); }
         #no-selection-msg { display: none; text-align: center; padding: 50px; color: #777; }
 
-        /* ---------------------------------------------------- */
-        /* 🔥 سحر وضع الأرشيف (لدمج القوائم) 🔥 */
-        /* ---------------------------------------------------- */
         body.archive-mode .subject-section {
             display: block !important;
-            background-color: transparent; /* إزالة الخلفية */
-            border: none; /* إزالة الإطار */
+            background-color: transparent;
+            border: none;
             padding: 0;
-            margin-bottom: 0; /* إلغاء المسافات بين الأقسام */
+            margin-bottom: 0;
         }
         
-        body.archive-mode .subject-title {
-            display: none; /* إخفاء عناوين المواد */
-        }
-
-        body.archive-mode .test-link-row {
-            display: none; /* إخفاء أزرار الاختبارات ليبقى شكل ملفات فقط */
-        }
-        
-        body.archive-mode #archive-header {
-            display: block; /* إظهار عنوان الأرشيف */
-        }
+        body.archive-mode .subject-title { display: none; }
+        body.archive-mode .test-link-row { display: none; }
+        body.archive-mode #archive-header { display: block; }
         
         #archive-header {
             display: none;
             text-align: center;
             color: #f39c12;
-            margin: 20px 0 10px;
+            margin: 10px 0 20px;
             font-size: 16px;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
@@ -100,9 +123,14 @@
         <h2>📁 المواد الدراسية</h2>
     </header>
 
-    <div id="no-selection-msg"><p>الرجاء اختيار مادة من الصفحة الرئيسية</p></div>
+    <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="search-input" placeholder="ابحث عن مادة، شابتر، أو ملف..." onkeyup="searchFiles()">
+    </div>
+
+    <div id="no-selection-msg"><p>الرجاء اختيار مادة من الصفحة الرئيسية أو استخدام البحث</p></div>
     
-    <h3 id="archive-header">📚 أرشيف جميع الملفات</h3>
+    <h3 id="archive-header">📚 نتائج الأرشيف</h3>
 
     <div id="cost" class="subject-section">
         <h3 class="subject-title">🏭 Cost Accounting</h3>
@@ -140,42 +168,7 @@
         <p style="color: #aaa; text-align: center; font-size: 13px;">لا يوجد مواد حالياً</p>
     </div>
 
-    <script>
-        function showSection() {
-            var sections = document.querySelectorAll('.subject-section');
-            var hash = window.location.hash.substring(1);
-            var body = document.body;
-
-            // إزالة وضع الأرشيف افتراضياً
-            body.classList.remove('archive-mode');
-
-            if (hash === 'all') {
-                // تفعيل وضع الأرشيف (يخفي العناوين ويدمج الأقسام بالـ CSS)
-                body.classList.add('archive-mode');
-                document.getElementById('no-selection-msg').style.display = 'none';
-            } 
-            else if (hash) {
-                // الوضع العادي: إخفاء الكل ثم إظهار القسم المحدد
-                sections.forEach(function(section) {
-                    section.style.display = 'none';
-                });
-                var targetSection = document.getElementById(hash);
-                if (targetSection) {
-                    targetSection.style.display = 'block';
-                    document.getElementById('no-selection-msg').style.display = 'none';
-                }
-            } 
-            else {
-                sections.forEach(function(section) {
-                    section.style.display = 'none';
-                });
-                document.getElementById('no-selection-msg').style.display = 'block';
-            }
-        }
-
-        window.onload = showSection;
-        window.onhashchange = showSection;
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
