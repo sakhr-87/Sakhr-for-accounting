@@ -32,6 +32,7 @@
         }
         .back-btn:active { transform: translateY(-50%) scale(0.9); background-color: #f39c12; color: #000; }
 
+        /* التصميم العادي للأقسام */
         .subject-section {
             display: none; background-color: #1a1a1a; border-radius: 15px; padding: 20px;
             margin-bottom: 30px; border: 1px solid #333; text-align: right; max-width: 800px; margin: 20px auto; width: 95%;
@@ -54,6 +55,42 @@
         .test-link-row { background: rgba(243, 156, 18, 0.05); border: 1px dashed #f39c12; text-align: center; padding: 15px; border-radius: 10px; margin-top: 20px; }
         .btn-goto-test { display: inline-block; background: #f39c12; color: #000; padding: 8px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 13px; margin-top: 8px; box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2); }
         #no-selection-msg { display: none; text-align: center; padding: 50px; color: #777; }
+
+        /* ---------------------------------------------------- */
+        /* 🔥 سحر وضع الأرشيف (لدمج القوائم) 🔥 */
+        /* ---------------------------------------------------- */
+        body.archive-mode .subject-section {
+            display: block !important;
+            background-color: transparent; /* إزالة الخلفية */
+            border: none; /* إزالة الإطار */
+            padding: 0;
+            margin-bottom: 0; /* إلغاء المسافات بين الأقسام */
+        }
+        
+        body.archive-mode .subject-title {
+            display: none; /* إخفاء عناوين المواد */
+        }
+
+        body.archive-mode .test-link-row {
+            display: none; /* إخفاء أزرار الاختبارات ليبقى شكل ملفات فقط */
+        }
+        
+        body.archive-mode #archive-header {
+            display: block; /* إظهار عنوان الأرشيف */
+        }
+        
+        #archive-header {
+            display: none;
+            text-align: center;
+            color: #f39c12;
+            margin: 20px 0 10px;
+            font-size: 16px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body>
@@ -64,6 +101,8 @@
     </header>
 
     <div id="no-selection-msg"><p>الرجاء اختيار مادة من الصفحة الرئيسية</p></div>
+    
+    <h3 id="archive-header">📚 أرشيف جميع الملفات</h3>
 
     <div id="cost" class="subject-section">
         <h3 class="subject-title">🏭 Cost Accounting</h3>
@@ -105,16 +144,18 @@
         function showSection() {
             var sections = document.querySelectorAll('.subject-section');
             var hash = window.location.hash.substring(1);
+            var body = document.body;
 
-            // أمر "إظهار الكل" (الجديد)
+            // إزالة وضع الأرشيف افتراضياً
+            body.classList.remove('archive-mode');
+
             if (hash === 'all') {
-                sections.forEach(function(section) {
-                    section.style.display = 'block';
-                });
+                // تفعيل وضع الأرشيف (يخفي العناوين ويدمج الأقسام بالـ CSS)
+                body.classList.add('archive-mode');
                 document.getElementById('no-selection-msg').style.display = 'none';
             } 
-            // أمر إظهار قسم محدد
             else if (hash) {
+                // الوضع العادي: إخفاء الكل ثم إظهار القسم المحدد
                 sections.forEach(function(section) {
                     section.style.display = 'none';
                 });
@@ -124,7 +165,6 @@
                     document.getElementById('no-selection-msg').style.display = 'none';
                 }
             } 
-            // الوضع الافتراضي
             else {
                 sections.forEach(function(section) {
                     section.style.display = 'none';
