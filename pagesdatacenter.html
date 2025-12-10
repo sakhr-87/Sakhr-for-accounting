@@ -106,14 +106,14 @@
             var sections = document.querySelectorAll('.subject-section');
             var hash = window.location.hash.substring(1);
 
-            // إذا كان الرابط ينتهي بـ #all يظهر جميع الأقسام
+            // أمر "إظهار الكل" (الجديد)
             if (hash === 'all') {
                 sections.forEach(function(section) {
                     section.style.display = 'block';
                 });
                 document.getElementById('no-selection-msg').style.display = 'none';
             } 
-            // إذا كان ينتهي برابط محدد مثل #cost
+            // أمر إظهار قسم محدد
             else if (hash) {
                 sections.forEach(function(section) {
                     section.style.display = 'none';
@@ -124,7 +124,7 @@
                     document.getElementById('no-selection-msg').style.display = 'none';
                 }
             } 
-            // إذا دخل الصفحة بدون تحديد
+            // الوضع الافتراضي
             else {
                 sections.forEach(function(section) {
                     section.style.display = 'none';
