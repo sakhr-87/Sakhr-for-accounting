@@ -182,18 +182,18 @@ footer {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 25px; /* زيادة المسافة بين الأيقونات */
+    gap: 25px;
 }
 
 .social-icons a {
-    color: #f39c12; /* اللون البرتقالي الغامق للأيقونات */
-    font-size: 35px; /* تكبير حجم الأيقونات */
+    color: #f39c12;
+    font-size: 35px;
     transition: 0.3s;
-    text-decoration: none; /* إزالة الخط الافتراضي */
+    text-decoration: none;
 }
 
 .social-icons a:hover {
-    color: #fff; /* تحول للأبيض عند اللمس */
+    color: #fff;
     transform: scale(1.2);
 }
 
