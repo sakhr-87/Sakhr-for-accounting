@@ -251,3 +251,10 @@ footer {
 .view-archive-btn i {
     font-size: 18px;
 }
+.search-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 25px auto 10px;
+    position: relative;
+    display: none;
+}
