@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            border-bottom: 1px solid #333;
+            background-color: #000;
+        }
+        .back-btn {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px; 
+            height: 40px; 
+            background-color: #1a1a1a;
+            color: #f39c12;
+            border: 1px solid #333;
+            border-radius: 50%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+        .back-btn:hover {
+            background-color: #f39c12;
+            color: #000;
+        }
+        .back-btn svg {
+            width: 22px;
+            height: 22px;
+        }
+        h2 {
+            font-size: 18px;
+            margin: 0;
+            color: #fff;
+        }
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+        .contact-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background-color: #252525;
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus, textarea:focus {
+            border-color: #f39c12;
+            background-color: #2a2a2a;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #f39c12;
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </a>
+        <h2>Contact Us</h2>
+    </header>
+
+    <div class="contact-wrapper">
+        <div class="contact-card">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="msg">Msg</label>
+                    <textarea id="msg" placeholder="Type your message here..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

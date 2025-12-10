@@ -38,6 +38,7 @@
             max-width: 600px;
             margin: 25px auto 10px;
             position: relative;
+            display: none;
         }
 
         #search-input {
@@ -77,12 +78,16 @@
         .subject-title { color: #f39c12; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px; font-size: 18px; }
 
         .file-row { display: flex; justify-content: space-between; align-items: center; background: #252525; padding: 12px; margin-bottom: 10px; border-radius: 10px; border: 1px solid #333; }
-        .file-info h4 { margin: 0 0 3px 0; font-size: 14px; color: #fff; }
-        .file-info p { margin: 0; font-size: 11px; color: #aaa; }
+        
+        .file-info h4 { margin: 0 0 3px 0; font-size: 16px; color: #fff; font-weight: bold; }
+        .file-info p { margin: 0; font-size: 12px; color: #aaa; }
 
         .btn-download {
-            background: #333; color: #f39c12; padding: 6px 15px; border-radius: 50px; text-decoration: none;
-            font-size: 12px; font-weight: bold; border: 1px solid #f39c12; display: flex; align-items: center; justify-content: center; gap: 5px; min-width: 80px; transition: 0.2s;
+            background: #333; color: #f39c12; padding: 8px 15px; border-radius: 50px; text-decoration: none;
+            font-size: 13px; font-weight: bold; border: 1px solid #f39c12; display: flex; align-items: center; justify-content: center; gap: 5px; 
+            min-width: 90px;
+            white-space: nowrap;
+            transition: 0.2s;
         }
         .btn-download:hover { background: #f39c12; color: #000; }
 
@@ -134,9 +139,9 @@
 
     <div id="cost" class="subject-section">
         <h3 class="subject-title">🏭 Cost Accounting</h3>
-        <div class="file-row"><div class="file-info"><h4>JOB ORDER COSTING</h4><p>Chapter 4.pdf</p></div><a href="https://sakhr87.jimdofree.com/app/download/12989953431/Chapter+4.pdf?t=1556984786" target="_blank" class="btn-download">تحميل 📥</a></div>
-        <div class="file-row"><div class="file-info"><h4>Support-Department Costs</h4><p>Chapter 15.pdf</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
-        <div class="file-row"><div class="file-info"><h4>Joint Products</h4><p>Chapter 16.pdf</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>JOB ORDER COSTING</h4><p>Chapter 4.pdf (1.7 MB)</p></div><a href="https://sakhr87.jimdofree.com/app/download/12989953431/Chapter+4.pdf?t=1556984786" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>Allocation of Support-Department Costs</h4><p>Chapter 15.pdf (3.3 MB)</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>Cost Allocation: Joint Products</h4><p>Chapter 16.pdf (2.5 MB)</p></div><a href="#" class="btn-download">تحميل 📥</a></div>
         <div class="test-link-row"><h4 style="margin: 0; color: #fff; font-size: 14px;">جاهز للاختبار؟</h4><a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a></div>
     </div>
 
@@ -163,10 +168,96 @@
         <div class="test-link-row"><h4 style="margin: 0; color: #fff; font-size: 14px;">جاهز للاختبار؟</h4><a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a></div>
     </div>
 
-    <div id="problems" class="subject-section">
-        <h3 class="subject-title">🧩 المشكلات المعاصرة</h3>
-        <p style="color: #aaa; text-align: center; font-size: 13px;">لا يوجد مواد حالياً</p>
+    <div id="financial" class="subject-section">
+        <h3 class="subject-title">🏦 Financial Institutions (محاسبة المؤسسات المالية)</h3>
+        <div class="file-row"><div class="file-info"><h4>محاسبة المؤسسات المالية - كامل</h4><p>مادة محاسبة المؤسسات المالية-مدمج.pdf (4.2 MB)</p></div><a href="#" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="test-link-row"><h4 style="margin: 0; color: #fff; font-size: 14px;">جاهز للاختبار؟</h4><a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a></div>
     </div>
+
+    <div id="statistical" class="subject-section">
+        <h3 class="subject-title">📊 Statistical Analysis (التحليل الإحصائي)</h3>
+        <div class="file-row"><div class="file-info"><h4>التحليل الاحصائي باستخدام الحاسوب SPSS</h4><p>new spss.pptx (2.7 MB)</p></div><a href="#" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="test-link-row"><h4 style="margin: 0; color: #fff; font-size: 14px;">جاهز للاختبار؟</h4><a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a></div>
+    </div>
+
+    <div id="managerial" class="subject-section">
+        <h3 class="subject-title">📋 Managerial Accounting (المحاسبة الإدارية)</h3>
+        <div class="file-row"><div class="file-info"><h4>Managerial Accounting: An Overview</h4><p>management accounting ch 1.pptx (677.0 KB)</p></div><a href="#" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>JOB ORDER COSTING</h4><p>management accounting ch 2.pptx (3.2 MB)</p></div><a href="#" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>PROCESS COSTING</h4><p>management accounting ch 3.pptx (1.9 MB)</p></div><a href="#" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="test-link-row"><h4 style="margin: 0; color: #fff; font-size: 14px;">جاهز للاختبار؟</h4><a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a></div>
+    </div>
+
+    <div id="icdl" class="subject-section">
+        <h3 class="subject-title">🖥️ ICDL Course (دورة قيادة الحاسب الآلي)</h3>
+        <div class="file-row"><div class="file-info"><h4>الوحدة الاولى - مفاهيم التكنولوجيا</h4><p>الوحدة الاولى.pdf (1.6 MB)</p></div><a href="#" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>ICT-Arabic</h4><p>1-ICT-AR.pdf (9.3 MB)</p></div><a href="#" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>Windows-Arabic</h4><p>2-Windows7-AR.pdf (8.7 MB)</p></div><a href="#" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="file-row"><div class="file-info"><h4>Word-Arabic</h4><p>3-Word-AR.compressed.pdf (7.7 MB)</p></div><a href="#" target="_blank" class="btn-download">تحميل 📥</a></div>
+        <div class="test-link-row"><h4 style="margin: 0; color: #fff; font-size: 14px;">جاهز للاختبار؟</h4><a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a></div>
+    </div>
+
+    <div id="gov" class="subject-section">
+        <h3 class="subject-title">🏛️ Governmental Accounting (المحاسبة الحكومية)</h3>
+        <div class="file-row">
+            <div class="file-info">
+                <h4>المحاسبة الحكومية</h4>
+                <p>المحاسبة الحكومية.pdf (4.8 MB)</p>
+            </div>
+            <a href="#" target="_blank" class="btn-download">تحميل 📥</a>
+        </div>
+        <div class="test-link-row">
+            <h4 style="margin: 0; color: #fff; font-size: 14px;">جاهز للاختبار؟</h4>
+            <a href="index.html#self-test" class="btn-goto-test">📝 الذهاب للاختبار الذاتي</a>
+        </div>
+    </div>
+    
+    <div id="archive-only" class="subject-section">
+        <h3 class="subject-title">📂 ملفات عامة وإضافية</h3>
+        
+        <p style="color: #777; font-size: 12px; margin-bottom: 10px;">ملفات إضافية متنوعة:</p>
+        <div class="file-row">
+            <div class="file-info">
+                <h4>المشكلات المحاسبية المعاصرة - الفصل الأول</h4>
+                <p>مشكلات محاسبية.pdf (5.4 MB)</p>
+            </div>
+            <a href="#" target="_blank" class="btn-download">تحميل 📥</a>
+        </div>
+
+        <div class="file-row">
+            <div class="file-info">
+                <h4>مصطلحات تجارية</h4>
+                <p>مصطلحات تجارية.pdf (182.9 KB)</p>
+            </div>
+            <a href="#" target="_blank" class="btn-download">تحميل 📥</a>
+        </div>
+
+        <div class="file-row">
+            <div class="file-info">
+                <h4>المحاسبة المالية المتقدمة - الفصل الثاني</h4>
+                <p>advanced accounting ch2.pptx (954.6 KB)</p>
+            </div>
+            <a href="#" target="_blank" class="btn-download">تحميل 📥</a>
+        </div>
+
+        <div class="file-row">
+            <div class="file-info">
+                <h4>محاسبة تكاليف - الفصل الخامس عشر</h4>
+                <p>الفصل الخامس عشر.pdf (3.3 MB)</p>
+            </div>
+            <a href="#" target="_blank" class="btn-download">تحميل 📥</a>
+        </div>
+
+        <div class="file-row">
+            <div class="file-info">
+                <h4>Data Collection: Methods & Tools</h4>
+                <p>Data Collection.pdf (3.6 MB)</p>
+            </div>
+            <a href="#" target="_blank" class="btn-download">تحميل 📥</a>
+        </div>
+
+        </div>
+
 
     <script src="script.js"></script>
 

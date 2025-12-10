@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاختبار الذاتي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            border-bottom: 1px solid #333;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px; 
+            height: 40px; 
+            background-color: #1a1a1a !important;
+            color: #f39c12 !important;
+            border: 1px solid #333;
+            border-radius: 50%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+            z-index: 100;
+            cursor: pointer;
+        }
+
+        .back-btn svg { width: 22px; height: 22px; }
+
+        .result-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div onclick="handleBack(event)" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </div>
+        <h2 id="quiz-title">الاختبار الذاتي</h2>
+    </header>
+
+    <div class="quiz-wrapper">
+        <div id="start-screen" class="quiz-card">
+            <h3>الرجاء اختيار مادة للاختبار</h3>
+            <p style="color:#aaa;">عد للصفحة الرئيسية واختر "بدء الاختبار" بجانب المادة المطلوبة.</p>
+            <a href="index.html" class="cta-btn" style="margin-top: 15px; display: inline-block;">العودة للاختيار</a>
+        </div>
+
+        <div id="quiz-screen" class="quiz-card" style="display: none;">
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            
+            <div class="question-header">
+                <span id="question-count">سؤال 1</span>
+            </div>
+
+            <h3 id="question-text" style="min-height: 60px; font-size: 15px;">جاري التحميل...</h3>
+
+            <div class="options-container" id="options-container">
+                </div>
+
+            <button id="next-btn" class="cta-btn" style="display: none; margin-top: 20px; width: 100%;">السؤال التالي</button>
+        </div>
+
+        <div id="result-screen" class="quiz-card" style="display: none; text-align: center;">
+            <h3 id="result-title" style="font-size: 22px; margin-bottom: 10px;">نتيجة الاختبار</h3>
+            <p id="result-message" style="color: #aaa; font-size: 14px;">...</p>
+            
+            <div class="score-circle">
+                <span id="final-score">0%</span>
+            </div>
+
+            <div class="result-actions">
+                <button onclick="reviewMistakes()" class="card-btn outline" style="width: 100%; cursor: pointer; border-color: #aaa; color: #fff;">
+                    مراجعة الإجابات
+                </button>
+
+                <button onclick="restartCurrentQuiz()" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">
+                    إعادة الاختبار
+                </button>
+                
+                <a href="index.html" class="card-btn outline" style="width: 100%; display: block; text-align: center; padding: 12px; margin-top: 5px;">
+                    القائمة الرئيسية
+                </a>
+            </div>
+        </div>
+
+        <div id="review-screen" class="quiz-card" style="display: none;">
+            <h3 style="text-align: center; color: #f39c12; margin-bottom: 10px;">مراجعة الإجابات</h3>
+            <div id="review-list" class="review-container">
+                </div>
+            <button onclick="showFinalResultScreen()" class="cta-btn" style="width: 100%; margin-top: 15px;">العودة للنتيجة</button>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="questions.js"></script>
+
+</body>
+</html>

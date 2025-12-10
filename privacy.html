@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Sakhr</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            border-bottom: 1px solid #333;
+            background-color: #000;
+        }
+        .back-btn {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px; 
+            height: 40px; 
+            background-color: #1a1a1a;
+            color: #f39c12;
+            border: 1px solid #333;
+            border-radius: 50%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+        .back-btn:hover {
+            background-color: #f39c12;
+            color: #000;
+        }
+        .back-btn svg {
+            width: 22px;
+            height: 22px;
+        }
+        h2 {
+            font-size: 18px;
+            margin: 0;
+            color: #fff;
+        }
+        .privacy-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            min-height: 80vh;
+        }
+        .privacy-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .section-title {
+            color: #f39c12;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .content-text {
+            text-align: left;
+            line-height: 1.8;
+            color: #ddd;
+            font-size: 15px;
+        }
+        .content-text p {
+            margin-bottom: 15px;
+        }
+        a {
+            color: #f39c12;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </a>
+        <h2>Privacy Policy</h2>
+    </header>
+
+    <div class="privacy-wrapper">
+        <div class="privacy-card">
+            <h3 class="section-title">Spam Protection with Google reCAPTCHA</h3>
+            
+            <div class="content-text">
+                <p>We have implemented Google reCAPTCHA in forms on our website to check whether the data entered in the forms comes from human visitors or from machines or automated programs, also known as “bots”. This tool automatically analyzes the behavior of website visitors as soon as they interact with the website using various information like IP address, length of stay, and mouse movements.</p> 
+                
+                <p>The data processed includes usage data such as the website accessed, date and time of access, and mouse movements, as well as communication data like IP addresses, browser type, and operating system. This processing is targeted at website visitors and users of online services. The primary purpose of this processing is to prevent the misuse of our contact form, thereby enhancing security.</p>
+
+                <p>The legal basis for this is our legitimate interest according to Art. 6 para. 1 p. 1 lit. f. GDPR. The data recipients include Google Ireland Ltd, based at Google Building Gordon House, Barrow St, Dublin 4, Ireland, (<a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>) and our website hosting provider.</p>
+
+                <p>While your personal data is processed within the EU, the retention time for the processed data is determined by Google Ireland Limited. Additional information can be found in the Google reCAPTCHA privacy policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
