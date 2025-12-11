@@ -284,6 +284,55 @@ function restartCurrentQuiz() {
         window.location.reload();
     }
 }
+function showSection() {
+    var sections = document.querySelectorAll('.subject-section');
+    if (sections.length > 0) {
+        var hash = window.location.hash.substring(1);
+        var body = document.body;
+        var searchContainer = document.querySelector('.search-container');
+        
+        body.classList.remove('archive-mode');
+        if (searchContainer) searchContainer.style.display = 'none';
+        if(document.getElementById('search-input')) document.getElementById('search-input').value = '';
+
+        if (hash === 'all') {
+            if (searchContainer) searchContainer.style.display = 'block';
+            body.classList.add('archive-mode');
+            sections.forEach(s => s.style.display = 'block');
+            document.querySelectorAll('.file-row').forEach(r => r.style.display = "flex");
+            if(document.getElementById('no-selection-msg')) document.getElementById('no-selection-msg').style.display = 'none';
+        } 
+        else if (hash && document.getElementById(hash)) {
+            sections.forEach(s => s.style.display = 'none');
+            document.getElementById(hash).style.display = 'block';
+            document.getElementById(hash).querySelectorAll('.file-row').forEach(r => r.style.display = "flex");
+            if(document.getElementById('no-selection-msg')) document.getElementById('no-selection-msg').style.display = 'none';
+        } 
+        else {
+            sections.forEach(s => s.style.display = 'none');
+            if(document.getElementById('no-selection-msg')) document.getElementById('no-selection-msg').style.display = 'block';
+        }
+    }
+
+    if (window.location.pathname.includes('selftest.html') || window.location.pathname.includes('selftest')) {
+        var hash = window.location.hash.substring(1);
+        if (hash && quizzes[hash]) {
+            lastSubjectKey = hash;
+            if (quizzes[hash].isChapters) {
+                showChaptersList(hash);
+            } else {
+                startQuiz(hash);
+            }
+        } else {
+            quizState = 'main';
+            document.getElementById('start-screen').style.display = 'block';
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'none';
+            document.getElementById('review-screen').style.display = 'none';
+            if(document.getElementById('chapters-list-screen')) document.getElementById('chapters-list-screen').style.display = 'none';
+        }
+    }
+}
 
 window.onload = showSection;
 window.onhashchange = showSection;
